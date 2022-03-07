@@ -1,0 +1,216 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API de Regiões",
+    "description": "Uma api para checar localidades.",
+    "version": "0.0.1",
+    "termsOfService": "hhttp://localhost:8080/h2/login.jsp?jsessionid=58af97fbc0d6112b00920225e2b085bd",
+    "contact": {
+      "name": "Carlos Neto",
+      "email": "carlos.albuquerqu.pb@compasso.com.br",
+      "url": "https://github.com/Carlos-Shinra-Neto"
+    },
+    "license": {
+      "name": "GPLv3",
+      "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/h2/",
+      "description": "API Compass"
+    }
+  ],
+  "paths": {
+    "/api/states": {
+      "get": {
+        "summary": "recupera todos os estados.",
+        "responses": {
+          "200": {
+            "description": "sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "nome": {
+                        "type": "string"
+                      },
+                      "regiao": {
+                        "type": "string"
+                      },
+                      "população": {
+                        "type": "number"
+                      },
+                      "capital": {
+                        "type": "string"
+                      },
+                      "area": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/states/{id}": {
+      "get": {
+        "summary": "recupera entidade pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "nome": {
+                      "type": "string"
+                    },
+                    "regiao": {
+                      "type": "string"
+                    },
+                    "população": {
+                      "type": "number"
+                    },
+                    "capital": {
+                      "type": "string"
+                    },
+                    "area": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Id nao encontrado",
+            "content": {
+              "application/json": {
+                "example": "Not Found"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/regions": {
+      "get": {
+        "summary": "recupera todos os estados.",
+        "responses": {
+          "200": {
+            "description": "sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "nome": {
+                        "type": "string"
+                      },
+                      "regiao": {
+                        "type": "string"
+                      },
+                      "população": {
+                        "type": "number"
+                      },
+                      "capital": {
+                        "type": "string"
+                      },
+                      "area": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/regions/{id}": {
+      "get": {
+        "summary": "recupera entidade pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "nome": {
+                      "type": "string"
+                    },
+                    "regiao": {
+                      "type": "string"
+                    },
+                    "população": {
+                      "type": "number"
+                    },
+                    "capital": {
+                      "type": "string"
+                    },
+                    "area": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Id nao encontrado",
+            "content": {
+              "application/json": {
+                "example": "Not Found"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
